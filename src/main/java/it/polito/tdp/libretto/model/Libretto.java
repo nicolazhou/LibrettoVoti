@@ -50,6 +50,11 @@ public class Libretto {
 		
 	}
 	
+	/**
+	 * Verifica se la valutazione è già presente nel libretto (Stesso corso con lo stesso voto)
+	 * @param nuovo
+	 * @return
+	 */
 	public boolean esisteVoto(Voto nuovo) {
 		
 		for(Voto v : this.voti) {
@@ -64,6 +69,25 @@ public class Libretto {
 	}
 	
 	
+	/**
+	 * Verifica se esiste un voto diverso già memorizzato dello stesso corso
+	 * @param nuovo
+	 * @return
+	 */
+	public boolean esisteConflittoVoto(Voto nuovo) {
+		
+		for(Voto v : this.voti) {
+			
+			if(v.getNomeCorso().compareTo(nuovo.getNomeCorso())==0) {
+				if(v.getPunti() != nuovo.getPunti()) {
+					return true;
+				}
+			}
+		}
+		
+		
+		return false;
+	}
 	
 	
 }
