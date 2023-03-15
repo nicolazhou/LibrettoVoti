@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import it.polito.tdp.libretto.model.Libretto;
+
 /**
  * JavaFX App
  */
@@ -20,6 +22,10 @@ public class App extends Application {
     	Parent root = loader.load();
     	Scene scene = new Scene(root) ;
 
+    	Libretto model = new Libretto();
+    	Controller controller = loader.getController();
+    	controller.setModel(model);
+    	
     	stage.setScene(scene);
         stage.show();
     }
