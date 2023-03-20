@@ -2,14 +2,20 @@ package it.polito.tdp.libretto.model;
 
 import java.util.*;
 
+import it.polito.tdp.libretto.db.VotoDAO;
+
 public class Libretto {
 	
 	private List<Voto> voti;
 	
 	
 	public Libretto() {
-		this.voti = new ArrayList<Voto>();
+		//this.voti = new ArrayList<Voto>();
+		
+		VotoDAO dao = new VotoDAO() ;
+		this.voti = dao.listVoti() ;
 	}
+	
 	
 	/**
 	 * Aggiungi un nuovo voto al libretto
@@ -27,6 +33,9 @@ public class Libretto {
 			
 			//return false;
 		}
+		
+		VotoDAO dao = new VotoDAO();
+		dao.createVoto(v) ;
 		
 		return this.voti.add(v);	
 	}
@@ -207,5 +216,6 @@ public class Libretto {
 		
 		return s;
 	}
+	
 	
 }

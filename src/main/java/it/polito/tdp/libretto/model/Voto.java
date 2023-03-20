@@ -67,7 +67,7 @@ public class Voto{
 	
 	@Override
 	public String toString() {
-		return "Voto [nomeCorso=" + nomeCorso + ", punti=" + punti + ", dataEsame=" + dataEsame + "]";
+		return "Corso: " + this.nomeCorso + " (" + this.punti + " pt)  data: " + this.dataEsame;
 	}
 	
 

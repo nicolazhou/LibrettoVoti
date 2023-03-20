@@ -21,6 +21,8 @@ public class Controller {
 	
 	public void setModel(Libretto model) {
 		this.model = model;
+		
+		txtResult.setText(this.model.toString());
 	}
 	
 
